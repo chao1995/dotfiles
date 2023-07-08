@@ -1,0 +1,26 @@
+[alias]
+    b = branch
+    c = checkout
+    fb = !"git filter-branch -f --env-filter 'GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE; export GIT_COMMITTER_DATE'"
+    fm = fetch origin master:master
+    l = log --oneline --decorate -n 25
+    ll = log --pretty=format:\"%h %ad %s\" --date=short -n 25
+    m = commit -a --amend --no-edit
+    p = pull origin master -r
+    ra = rebase --abort
+    rc = rebase --continue
+    s = status -s
+    su = !"git stash && git u && git stash pop"
+    u = !"git fm && git p"
+[core]
+    autocrlf = input
+    editor = vi
+    excludesfile = ~/.gitignore
+    quotePath = false
+[push]
+    default = current
+[user]
+    name = chao1995
+    email = huangchao0825@gmail.com
+[credential]
+	helper = osxkeychain
